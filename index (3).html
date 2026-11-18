@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>กลุ่มควบคุมป้องกันโรคโค – โครงการตามปีงบประมาณ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&family=Sarabun:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6faf7;--surface:#fff;--ink:#17301f;--muted:#566b5d;--line:#d5e3d9;--accent:#1f7a4d;--tag:#e3f3ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1b14;--surface:#162a1f;--ink:#e8f3ec;--muted:#9fb8a8;--line:#28422f;--accent:#6fd0a0;--tag:#1f3b2b}}
+:root[data-theme="dark"]{--bg:#0e1b14;--surface:#162a1f;--ink:#e8f3ec;--muted:#9fb8a8;--line:#28422f;--accent:#6fd0a0;--tag:#1f3b2b}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Sarabun,system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3,.qk b{font-family:Prompt,Sarabun,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+.top{padding:32px 0 6px}
+.top p{margin:0;color:var(--muted)}
+h1{font-size:clamp(1.6rem,5.5vw,2.3rem);line-height:1.25;margin:2px 0 14px;font-weight:600}
+.search input{width:100%;padding:13px 18px;font:inherit;border:2px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+.search input:focus{outline:3px solid var(--accent);border-color:var(--accent)}
+.quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px;margin:16px 0 0}
+.qk{position:relative;display:flex;align-items:flex-end;min-height:92px;padding:12px;border-radius:16px;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--c),var(--c2));background-size:cover;background-position:center;overflow:hidden}
+.qk.has-img::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(0,0,0,.7))}
+.qk>*{position:relative}
+.qk b{font-size:.98rem;font-weight:500;line-height:1.3;padding-right:30px}
+.qk svg{position:absolute;top:10px;right:10px;width:24px;height:24px;opacity:.9}
+.qk:hover{filter:brightness(1.08)}
+.qk:focus-visible,.body h3 a:focus-visible,.chips a:focus-visible,.yrnav a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.yrnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;margin-top:18px;background:var(--bg)}
+.yrnav a{flex:1 1 auto;text-align:center;padding:10px 12px;border-radius:999px;border:2px solid var(--accent);color:var(--accent);text-decoration:none;font-family:Prompt,sans-serif;font-weight:500}
+.yrnav a:first-child{background:var(--accent);color:var(--surface)}
+h2{font-size:1.4rem;margin:26px 0 14px;font-weight:600}
+h2 small{font-family:Sarabun,sans-serif;font-weight:400;color:var(--muted);font-size:.95rem;margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.body h3{margin:0;font-size:1rem;font-weight:500;line-height:1.45}
+.code{align-self:flex-start;background:var(--tag);border-radius:999px;padding:0 12px;font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.chips a{padding:5px 13px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);text-decoration:none;font-size:.92rem}
+details summary{cursor:pointer;color:var(--accent);font-size:.92rem}
+details .chips{margin-top:8px}
+.en{margin:-6px 0 14px;color:var(--muted)}
+.empty{padding:22px;border:2px dashed var(--line);border-radius:18px;color:var(--muted);text-align:center;margin:0}
+.zone{margin-top:12px}
+.zone b{display:block;font-family:Prompt,sans-serif;font-weight:500;font-size:.92rem;margin-bottom:4px}
+.note{margin:8px 0 0;font-size:.9rem;color:var(--muted)}
+.chips .off{padding:5px 13px;border-radius:999px;border:1.5px dashed var(--line);color:var(--muted);font-size:.92rem}
+.ph{aspect-ratio:2/1;background:linear-gradient(135deg,var(--c),var(--c2));background-size:cover;background-position:center}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.body h3 a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.body h3 a:hover{text-decoration-thickness:3px}
+.none{display:none;color:var(--muted)}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.contact a,footer a{color:var(--accent)}
+footer{margin:36px 0 40px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><p>สำนักควบคุม ป้องกันและบำบัดโรคสัตว์</p><h1>กลุ่มควบคุมป้องกันโรคโค</h1>
+<div class="search"><input id="q" type="search" placeholder="ค้นหาโครงการ เช่น ลัมปี สกิน, Lumpy Skin Disease, บรูเซลลา, R2001" aria-label="ค้นหาโครงการ"></div>
+<div class="quick" id="quick"></div></div>
+<nav class="yrnav" id="yrnav" aria-label="เลือกปีงบประมาณ"></nav>
+<main id="main"></main>
+<p class="none" id="none">ไม่พบโครงการที่ตรงกับคำค้น</p>
+<h2>ติดต่อเรา</h2>
+<div class="contact">กลุ่มควบคุมป้องกันโรคโค<br>โทร <a href="tel:026534444">02-653-4444</a> ต่อ 4165<br><a href="mailto:dcontrol13@dld.go.th">dcontrol13@dld.go.th</a></div>
+</div>
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script>
+var I={
+ syringe:'<path d="M18 2l4 4M17 7l3-3M19 9l-8.7 8.7a2.8 2.8 0 01-4 0l-.3-.3a2.8 2.8 0 010-4L14.7 4.7M6 15l-3 3M9 12l3 3M11 10l3 3"/>',
+ cow:'<path d="M4 6l3 3M20 6l-3 3"/><rect x="6" y="8" width="12" height="11" rx="5"/><circle cx="10" cy="12" r=".6"/><circle cx="14" cy="12" r=".6"/><ellipse cx="12" cy="16" rx="3" ry="2"/>',
+ box:'<path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/>',
+ chart:'<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>',
+ check:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 12l2 2 4-4"/>',
+ shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/>',
+ virus:'<circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+ home:'<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>'
+};
+var CK="cattle_sheet_cache_v1",cats={};
+function esc(t){return String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function svg(n){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(I[n]||I.shield)+'</svg>'}
+function bg(o,c,c2){return '--c:'+esc(c)+';--c2:'+esc(c2)+(o?';background-image:url('+esc(o)+'),linear-gradient(135deg,'+esc(c)+','+esc(c2)+')':'')}
+function chip(p){return p[1]?'<a href="'+esc(p[1])+'" target="_blank" rel="noopener">'+esc(p[0])+'</a>':'<span class="off">'+esc(p[0])+' (ยังไม่มีลิงก์)</span>'}
+function card(p){
+ var k=cats[p.k]||{n:"",c:"#1f7a4d",c2:"#34a56b"},img="images/"+p.id+".jpg",l=p.l||[],first=l[0]?l[0][1]:"";
+ return '<article class="card" data-k="'+esc((p.n+' '+(p.c||'')+' '+k.n+' '+(k.kw||'')+' '+(p.zones?p.zones.map(function(z){return z.z+' '+z.l.map(function(x){return x[0]}).join(' ')}).join(' '):'')).toLowerCase())+'">'+
+  '<div class="ph" style="'+bg(img,k.c,k.c2)+'" role="img" aria-label="'+esc(p.n)+'"></div>'+
+  '<div class="body"><div class="tags"><span class="code" style="background:'+esc(k.c)+';color:#fff">'+esc(k.n)+'</span>'+(p.c?'<span class="code">รหัส LIMS '+esc(p.c)+'</span>':'')+'</div>'+
+  '<h3>'+(first?'<a href="'+esc(first)+'" target="_blank" rel="noopener">'+esc(p.n)+'</a>':esc(p.n))+'</h3>'+
+  (((p.all||l.length>1)&&l.length)?'<div class="chips">'+(p.all?l:l.slice(1)).map(chip).join("")+'</div>':'')+
+  ((p.zones&&p.zones.length)?'<details><summary>บันทึกข้อมูลประวัติสัตว์ ('+p.zones.length+' เขต)</summary>'+p.zones.map(function(z){return '<div class="zone"><b>'+esc(z.z)+'</b><div class="chips">'+z.l.map(chip).join("")+'</div></div>'}).join("")+'</details>':'')+
+  ((p.more&&p.more.length)?'<details><summary>'+(p.moreTitle?esc(p.moreTitle)+' ('+p.more.length+' จังหวัด)':'รายจังหวัด ('+p.more.length+')')+'</summary>'+(p.note?'<p class="note">'+esc(p.note)+'</p>':'')+'<div class="chips">'+p.more.map(chip).join("")+'</div></details>':'')+
+  '</div></article>';
+}
+function render(DATA){
+ cats=DATA.cats||{};var quick=DATA.quick||[],years=DATA.years||[],dart=DATA.dart||{n:"",items:[]};
+ document.getElementById("quick").innerHTML=quick.map(function(b){
+  var ext=(b.u||"#").charAt(0)!="#";
+  return '<a class="qk'+(b.img?' has-img':'')+'" style="'+bg(b.img,b.c,b.c2)+'" href="'+esc(b.u||"#")+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+svg(b.i)+'<b>'+esc(b.t)+'</b></a>';
+ }).join("");
+ document.getElementById("yrnav").innerHTML=years.map(function(Y){return '<a href="#y'+esc(Y.y)+'">ปีงบประมาณ '+esc(Y.y)+'</a>'}).join("");
+ document.getElementById("main").innerHTML=years.map(function(Y){
+  return '<section id="y'+esc(Y.y)+'"><h2>ปีงบประมาณ '+esc(Y.y)+'<small>'+Y.items.length+' โครงการ</small></h2>'+(Y.items.length?'<div class="grid">'+Y.items.map(card).join("")+'</div>':'<p class="empty">ยังไม่มีโครงการในปีงบประมาณนี้ จะเพิ่มเมื่อมีข้อมูล</p>')+'</section>';
+ }).join("")+(dart.items&&dart.items.length?'<section id="dart"><h2>'+esc(dart.n)+'<small>เอกสาร '+dart.items.length+' รายการ</small></h2>'+(dart.en?'<p class="en">('+esc(dart.en)+')</p>':'')+'<div class="grid">'+dart.items.map(card).join("")+'</div></section>':'');
+ filter();
+}
+function filter(){
+ var k=document.getElementById("q").value.trim().toLowerCase(),shown=0;
+ document.querySelectorAll("#main section").forEach(function(sec){
+  var n=0;
+  sec.querySelectorAll(".card").forEach(function(c){var ok=!k||c.dataset.k.indexOf(k)>-1;c.style.display=ok?"":"none";if(ok)n++});
+  sec.style.display=(n||!k)?"":"none";shown+=n;
+ });
+ document.getElementById("none").style.display=(k&&!shown)?"block":"none";
+}
+document.getElementById("q").addEventListener("input",filter);
+
+/* ---- Google Sheets loader ---- */
+function parseCSV(t){
+ var rows=[],r=[],f="",q=false,i=0,c;
+ t=t.replace(/^\uFEFF/,"");
+ for(;i<t.length;i++){c=t[i];
+  if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c=='"')q=true;
+  else if(c==","){r.push(f);f=""}
+  else if(c=="\n"||c=="\r"){if(c=="\r"&&t[i+1]=="\n")i++;r.push(f);rows.push(r);r=[];f=""}
+  else f+=c}
+ if(f!==""||r.length){r.push(f);rows.push(r)}
+ if(!rows.length)return [];
+ var h=rows[0].map(function(x){return x.trim().toLowerCase()});
+ return rows.slice(1).map(function(a){var o={};h.forEach(function(k,j){o[k]=(a[j]||"").trim()});return o})
+  .filter(function(o){return Object.keys(o).some(function(k){return o[k]})});
+}
+function tab(name){
+ var u="https://docs.google.com/spreadsheets/d/"+encodeURIComponent(window.SHEET_ID)+"/gviz/tq?tqx=out:csv&headers=1&sheet="+encodeURIComponent(name);
+ return fetch(u).then(function(r){if(!r.ok)throw new Error(name+" "+r.status);return r.text()}).then(parseCSV);
+}
+function build(T){
+ var cs={},byId={},years=[],ym={},dart={n:"",en:"",items:[]},S={};
+ T.cats.forEach(function(r){if(r.key)cs[r.key]={n:r.n,c:r.c||"#1f7a4d",c2:r.c2||r.c||"#34a56b",kw:r.kw||""}});
+ T.settings.forEach(function(r){S[r.key]=r.value});
+ dart.n=S.dart_n||"";dart.en=S.dart_en||"";
+ T.projects.forEach(function(r){
+  var sec=(r.section||"year").toLowerCase();
+  if(sec=="year"){var y=r.year;if(!y)return;if(!ym[y]){ym[y]={y:y,items:[]};years.push(ym[y])}if(!r.id&&!r.n)return}
+  if(!r.id&&!r.n)return;
+  var p={id:r.id||("p"+Math.random().toString(36).slice(2,8)),k:r.k,n:r.n,c:r.c||undefined,all:r.all&&r.all!="0"?1:undefined,moreTitle:r.movetitle||r.moretitle||undefined,note:r.note||undefined,l:[]};
+  byId[p.id]=p;(sec=="dart"?dart.items:ym[r.year].items).push(p)});
+ T.links.forEach(function(r){
+  var p=byId[r.id];if(!p||!r.label)return;var x=[r.label,r.url||""],t=(r.type||"main").toLowerCase();
+  if(t=="more"){(p.more=p.more||[]).push(x)}
+  else if(t=="zone"){p.zones=p.zones||[];var g=p.zones.filter(function(z){return z.z==r.zone})[0];if(!g){g={z:r.zone,l:[]};p.zones.push(g)}g.l.push(x)}
+  else p.l.push(x)});
+ return {cats:cs,quick:T.quick.filter(function(r){return r.t}).map(function(r){return {t:r.t,u:r.u,i:r.i||"shield",img:r.img||undefined,c:r.c||"#1f7a4d",c2:r.c2||r.c||"#34a56b"}}),years:years,dart:dart};
+}
+/* 1) แสดงข้อมูลสำรองหรือข้อมูลที่แคชไว้ทันที  2) แล้วโหลดจากชีตมาแทน */
+var cached=null;try{cached=JSON.parse(localStorage.getItem(CK))}catch(e){}
+var fallback=window.SITE_DATA||{cats:{},quick:[],years:[],dart:{n:"",items:[]}};
+if(window.SHEET_ID){
+ render(cached||fallback);
+ Promise.all(["quick","cats","projects","links","settings"].map(tab)).then(function(a){
+  var D=build({quick:a[0],cats:a[1],projects:a[2],links:a[3],settings:a[4]});
+  if(!D.years.length&&!D.quick.length)throw new Error("empty sheet");
+  render(D);try{localStorage.setItem(CK,JSON.stringify(D))}catch(e){}
+ }).catch(function(e){console.warn("โหลดจาก Google Sheets ไม่สำเร็จ ใช้ข้อมูลสำรอง:",e)});
+}else render(fallback);
+</script>
+</body>
+</html>
